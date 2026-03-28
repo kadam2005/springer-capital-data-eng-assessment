@@ -1,0 +1,38 @@
+table_name,column_name,data_type,total_rows,null_count,null_pct,distinct_count,min_value,max_value,sample_values
+user_referrals,referral_at,object,46,0,0.0,44,2024-03-08T11:31:24Z,2024-05-24T04:57:33Z,2024-05-01T05:17:31Z | 2024-04-22T15:04:57Z | 2024-05-02T14:10:16Z
+user_referrals,referral_id,object,46,0,0.0,46,1f44ffca9257eefe62892409bce4b704,fcb804c8ff24e5b2974a7e965ebea5e8,9331c8f144dad5a3b8e4a10467b4343a | 6371079a92bcbf0c16ae5fcdf4fc9c10 | a49105b02e690472452527663559d97a
+user_referrals,referee_id,object,46,3,6.52,37,04aec3adea13099cb24c4cc784f05f3d,f6507a982bde1dcda0ce0867ceac66f6,f1327c9d6d4efee6ad69e7e467b605b9 | 12dd343d282fb7915f55982937c30b87 | f6507a982bde1dcda0ce0867ceac66f6
+user_referrals,referee_name,object,46,3,6.52,35,069396bf68713451107ed621971b8fd3,feb4d885f99957d87b2e8eb1fd05b193,8ef43a9189c084778dadf266d6ee6071 | fa8e148b928aac56782d5c50042aee7b | 4f5649d2d7b3ee9406436f026094c1fe
+user_referrals,referee_phone,object,46,0,0.0,33,0520c1cc85cbd43be086d6067e316e39,ff6a10e68ce4c4a56e3c19238619f828,5ba638fed7578e677c7600f1038f1b77 | ce52ad7070f305b43a784b8503dbde13 | 74d8b76d490b094ba0cc7f144ed16cf5
+user_referrals,referral_reward_id,float64,46,38,82.61,3,1.0,3.0,2.0 | 1.0 | 3.0
+user_referrals,referral_source,object,46,0,0.0,3,Draft Transaction,User Sign Up,Draft Transaction | User Sign Up | Lead
+user_referrals,referrer_id,object,46,13,28.26,13,192befbbd8b97260e28db080a661578c,f2de40c8394f4ea9a6aa49965380dd8f,2c71c5d66c7e12a0b3c200ba6ed3b78e | f2de40c8394f4ea9a6aa49965380dd8f | 4acfa96cb521b6963b50bcef95bee485
+user_referrals,transaction_id,object,46,13,28.26,27,07f21743663aacb7d212c286d47a14de,f192fca27d438c053db425fade152d66,bc3a22d1b0c651d0c807a9bdaed08e8d | 4c8cae052f19cea66544affc759b76ee | 91263eaf2af17ac140c6fc23a68882d3
+user_referrals,updated_at,object,46,0,0.0,40,2024-04-29T04:04:15Z,2024-05-24T04:57:33Z,2024-05-01T05:17:31Z | 2024-04-29T04:04:15Z | 2024-05-02T14:10:29Z
+user_referrals,user_referral_status_id,int64,46,0,0.0,3,1,3,1 | 2 | 3
+user_referral_logs,id,int64,96,0,0.0,96,1,96,1 | 2 | 3
+user_referral_logs,user_referral_id,object,96,0,0.0,78,119330b602a0e3bc0b66487b6c53ec19,ffea2078bee21f79f199256757e5d578,433df86639089a01ce358b27aebdf19f | ea4d6702e73d722499c47bbe494214be | 7a03e01e0c17b2322845242a796adb5e
+user_referral_logs,source_transaction_id,object,96,79,82.29,17,0d5745a60be9f0d9163c99c91fd61efc,de0d476b360046c0d079d5f8fcb77c00,aa7f55497ab7a5842145c6c58e1395c2 | 3efa130b4bcb9b0675e0c5ac526b1e33 | 701ee6fa1925773ad8e13f1f6b7293ae
+user_referral_logs,created_at,object,96,0,0.0,96,2024-03-08T11:33:50Z,2024-07-10T08:51:11Z,2024-06-02T20:42:09Z | 2024-06-25T07:57:00Z | 2024-04-29T10:25:56Z
+user_referral_logs,is_reward_granted,bool,96,0,0.0,2,False,True,False | True
+user_logs,id,int64,29,0,0.0,29,1,29,1 | 2 | 3
+user_logs,user_id,object,29,0,0.0,9,192befbbd8b97260e28db080a661578c,f2de40c8394f4ea9a6aa49965380dd8f,d0a0d9ca8dc4f47226a8afd32ee2a848 | cadba628952bde1670ac4c0792afc28a | 8575e4f470c06e133f95c4be9aa13934
+user_logs,name,object,29,0,0.0,7,003609f9b658dc89cd16d904783834d4,ec55b0c6b4cf5e7e08ddcfbc0465b796,49452c26f7b12cd571bd598a0128819e | 2eb4b6e1ee9574c9e4a5f7e7e9b09280 | 003609f9b658dc89cd16d904783834d4
+user_logs,phone_number,object,29,0,0.0,9,488b1d38c3a3d84ab9839886acecf5e0,f495c5b0268d9896b8478ab32bfa02eb,f495c5b0268d9896b8478ab32bfa02eb | 6f1afb7c23074684ea05ffe9e63bb57a | be0692cdaa467a4d9352dfe3da3d263f
+user_logs,homeclub,object,29,0,0.0,6,ADITYAWARMAN,SUNSET ROAD,BENHIL | PLUIT | ARTERI PONDOK INDAH
+user_logs,timezone_homeclub,object,29,0,0.0,2,Asia/Jakarta,Asia/Makassar,Asia/Jakarta | Asia/Makassar
+user_logs,membership_expired_date,object,29,0,0.0,9,2024-03-31,2026-03-04,2024-09-02 | 2025-08-20 | 2024-08-24
+user_logs,is_deleted,bool,29,0,0.0,2,False,True,True | False
+user_referral_statuses,id,int64,3,0,0.0,3,1,3,1 | 3 | 2
+user_referral_statuses,description,object,3,0,0.0,3,Berhasil,Tidak Berhasil,Menunggu | Tidak Berhasil | Berhasil
+user_referral_statuses,created_at,object,3,0,0.0,2,2024-03-08T08:49:37Z,2024-03-08T10:07:10Z,2024-03-08T08:49:37Z | 2024-03-08T10:07:10Z
+referral_rewards,id,int64,3,0,0.0,3,1,3,1 | 3 | 2
+referral_rewards,reward_value,object,3,0,0.0,3,10 days,20 days,10 days | 15 days | 20 days
+referral_rewards,created_at,object,3,0,0.0,3,2024-03-13T02:44:32Z,2024-03-13T02:45:15Z,2024-03-13T02:44:32Z | 2024-03-13T02:45:15Z | 2024-03-13T02:45:11Z
+referral_rewards,reward_type,int64,3,0,0.0,1,1,1,1
+paid_transactions,transaction_id,object,14,0,0.0,14,07f21743663aacb7d212c286d47a14de,f192fca27d438c053db425fade152d66,1d1eb8a9e864a1cccb2d850398461807 | 8623f36f36e709fbefe43defcac59583 | 93d48d85048e102d32d02df43138d283
+paid_transactions,transaction_status,object,14,0,0.0,1,PAID,PAID,PAID
+paid_transactions,transaction_at,object,14,0,0.0,14,2024-05-01T05:07:30.374Z,2024-05-21T09:47:11.535Z,2024-05-02T04:49:01.497Z | 2024-05-02T07:53:43.179Z | 2024-05-20T04:23:09.444Z
+paid_transactions,transaction_location,object,14,0,0.0,6,ADITYAWARMAN,SUNSET ROAD,ARTERI PONDOK INDAH | BENHIL | SUNSET ROAD
+paid_transactions,timezone_transaction,object,14,0,0.0,2,Asia/Jakarta,Asia/Makassar,Asia/Jakarta | Asia/Makassar
+paid_transactions,transaction_type,object,14,0,0.0,2,NEW,REJOIN,NEW | REJOIN
