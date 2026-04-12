@@ -1,0 +1,37 @@
+# Version control
+.git
+.gitignore
+.github
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter artefacts
+.ipynb_checkpoints/
+*.ipynb
+
+# Output (generated at runtime, not needed in image)
+output/
+
+# Dev & docs
+README.md
+*.md
+*.xlsx
+*.zip
+
+# Environment files (never bake credentials into an image)
+.env
+.env.*
+*.env
+
+# OS noise
+.DS_Store
+Thumbs.db
