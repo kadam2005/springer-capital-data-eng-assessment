@@ -1,0 +1,82 @@
+# =============================================================================
+# Springer Capital — Referral Pipeline
+# =============================================================================
+# Python 3.11-slim: small footprint + stdlib zoneinfo support (PEP 615)
+# =============================================================================
+
+FROM python:3.11-slim AS base
+
+# ---------- metadata ---------------------------------------------------------
+LABEL maintainer="kadam2005" \
+      description="Referral-program ETL pipeline & fraud-detection reports" \
+      org.opencontainers.image.source="https://github.com/kadam2005/springer-capital-data-eng-assessment"
+
+# ---------- OS dependencies --------------------------------------------------
+# tzdata  → required by zoneinfo (stdlib)
+# unzip   → used to extract data.zip during build
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends tzdata unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+# =============================================================================
+# Stage: deps  — install Python packages in an isolated layer so that
+#               code-only changes do NOT trigger a full pip reinstall
+# =============================================================================
+FROM base AS deps
+
+WORKDIR /install
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
+
+# =============================================================================
+# Stage: runtime — lean final image
+# =============================================================================
+FROM base AS runtime
+
+WORKDIR /app
+
+# ---------- Python packages from deps stage ----------------------------------
+COPY --from=deps /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=deps /usr/local/bin /usr/local/bin
+
+# ---------- application code -------------------------------------------------
+COPY pipeline.py              ./pipeline.py
+COPY profiling.py             ./profiling.py
+COPY build_data_dictionary.py ./build_data_dictionary.py
+
+# ---------- source data (data.zip) -------------------------------------------
+
+
+# At runtime you can override with real CSVs via volume mount:
+#   docker run -v "$(pwd)/data:/app/data" ...
+ user_referrals.csv
+ user_referral_statuses.csv
+ user_referral_logs.csv
+ user_logs.csv
+ referral_rewards.csv
+ paid_transactions.csv
+ lead_log.csv
+
+# ---------- output directory (volume-mounted at runtime) ---------------------
+RUN mkdir -p /app/output
+
+# ---------- non-root user (security best-practice) ---------------------------
+RUN useradd --create-home --shell /bin/bash pipeline \
+    && chown -R pipeline:pipeline /app
+USER pipeline
+
+# ---------- environment ------------------------------------------------------
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    TZ=UTC
+
+# ---------- default command ---------------------------------------------------
+# Runs the full ETL + fraud-detection pipeline.
+#
+# Override at runtime:
+#   docker run ... python profiling.py              # run data profiling
+#   docker run ... python build_data_dictionary.py  # rebuild data dictionary
+CMD ["python", "pipeline.py"]
