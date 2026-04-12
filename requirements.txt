@@ -1,0 +1,6 @@
+# Core data processing
+pandas==2.2.2
+numpy==1.26.4
+
+# Excel output (profiling_report.xlsx, data_dictionary.xlsx)
+openpyxl==3.1.2
